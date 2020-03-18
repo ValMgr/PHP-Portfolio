@@ -1,7 +1,7 @@
 <?php 
 
-if (isset($_SESSION['Connected']) && !empty($_SESSION['Connected'])) {
-    $admin = $_SESSION['Connected'];
+if (isset($_SESSION['admin']) && !empty($_SESSION['admin'])) {
+    $admin = $_SESSION['admin'];
 }
 else {
     $admin = false;

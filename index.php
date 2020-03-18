@@ -27,7 +27,7 @@ include('@import/connection_check.php');
         </section>
    
         <section class="navbar-section">
-            <?php if(!$_SESSION['admin']){ ?>
+            <?php if(!$admin){ ?>
                 <button class="btn btn-primary" onclick="window.location.href='./connect/login_form.php'">Login</button>
             <?php }
                 else{ ?>
@@ -60,15 +60,15 @@ include('@import/connection_check.php');
                         </div>
                         <div class="card-body"><?php echo $donnees['description'] ?></div>
 
-                        <?php if ($_SESSION['admin']) { ?>
+                        <?php if ($admin) { ?>
 
                             <div class="card-footer">
                                 <form id="<?php echo ($donnees['id']);  ?>" action="projects/edit.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo ($donnees['id']);;  ?>" />
                                 </form>
 
-                                <a class="btn btn-primary" href='#' onclick='document.getElementById("<?php echo $donnees['id']  ?>").submit()'>Modifier</a>
-                                <a class="btn btn-error" href='#' >Supprimer</a>
+                                <a class="btn btn-primary" onclick="document.getElementById('<?php echo $donnees['id']?>').submit()">Modifier</a>
+                                <a class="btn btn-error" onclick="window.location.href='./projects/delet.php/?id=<?php echo $donnees['id']?>'" >Supprimer</a>
                             </div>
 
 

@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <?php
+<?php
 
     include('../@import/db_connect.php');
 
-    $id =  $_POST['id'];
+    $id =  $_GET['id'];
 
 
     $query = $dbPdo->prepare('DELETE FROM projects WHERE id= :id');
@@ -28,12 +17,8 @@
 
     echo $id;
 
-    echo 'Projet supprimé ! ! !';
+    echo 'Project delted';
 
-    header ('location: ../index.php');
+    header ('location: ../../index.php');
 
     ?>
-
-</body>
-
-</html>
