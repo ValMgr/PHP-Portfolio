@@ -1,8 +1,8 @@
 <?php
 
-    include('@import/db_connect.php');
+include('@import/db_connect.php');
 
-    $admin = true
+$admin = true
 
 ?>
 
@@ -44,6 +44,14 @@
                 echo 'error';
             }
             ?>
+
+            <?php if($admin) { ?>
+
+            <form id="<?php echo ($donnees['id']);  ?>" action="projects/edit.php" method="post"> <input type="hidden" name="id" value="<?php echo ($donnees['id']);;  ?>" /> </form>
+            <a href='#' onclick='document.getElementById("<?php echo $donnees['id']  ?>").submit()'>Modifier</a>
+
+            <?php } ?>
+            <br>
         </p>
 
     <?php
