@@ -1,6 +1,47 @@
 .content {
-    width: 100%;
-    max-width: 1200px;
-    padding: 50px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 50px;
+  margin: 0 auto;
+}
+.projects {
+    padding-top: 25px;
+}
+
+/* Nav bar */
+.navbar {
+  position: fixed;
+  justify-content: center;
+
+  width: 100%;
+  padding: 10px 0;
+
+  background: white;
+  box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.15);
+}
+.navbar section {
+  max-width: 600px;
+}
+.navbar section:nth-child(1) {
+  padding-left: 50px;
+}
+.navbar section:nth-child(2) {
+  padding-right: 50px;
+}
+.navbar button {
+    margin-left: 15px;
+}
+
+
+/* Index Cards */
+.column {
+    padding: .4rem;
+}
+.card {
+  border: 0;
+  box-shadow: 0 0.25rem 1rem rgba(48, 55, 66, 0.15);
+  height: 100%;
+}
+.card-image img {
+  width: 100%;
 }

@@ -21,45 +21,62 @@ $admin = true
 
 <body>
 
-    <a href="projects/add.php">add</a>
+    <header class="navbar">
+        <section class="navbar-section">
+            <a href="index.php" class="navbar-brand mr-2">V² Blog</a>
+            <a href="projects/add.php" class="btn btn-link">add</a>
+        </section>
+        <section class="navbar-section">
+            <button class="btn">Register</button>
+            <button class="btn btn-primary">Login</button>
+        </section>
+    </header>
 
-    <?php
-    // on récupère les données de la table projects
-    $reponse = $dbPdo->query('SELECT * FROM projects');
+    <div class="content">
+        <div class="columns projects">
 
-    // On affiche chaque entrée une à une
-    while ($donnees = $reponse->fetch()) {
-    ?>
-        <p>
-            Project : <?php echo $donnees['name'] . '<small>' . $donnees['type'] . ' ' . $donnees['year'] . '</small>' ?><br>
-            <?php echo $donnees['description'] ?><br>
             <?php
+            // on récupère les données de la table projects
+            $reponse = $dbPdo->query('SELECT * FROM projects');
 
-            if ($donnees['name'] == 0) {
-                // image
-                echo '<img src="' . $donnees['link'] . '">';
-            } elseif ($donnees['name'] == 1) {
-                echo 'video';
-            } else {
-                echo 'error';
-            }
+            // On affiche chaque entrée une à une
+            while ($donnees = $reponse->fetch()) {
             ?>
 
-            <?php if($admin) { ?>
 
-            <form id="<?php echo ($donnees['id']);  ?>" action="projects/edit.php" method="post"> <input type="hidden" name="id" value="<?php echo ($donnees['id']);;  ?>" /> </form>
-            <a href='#' onclick='document.getElementById("<?php echo $donnees['id']  ?>").submit()'>Modifier</a>
+                <div class="column col-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-image"><img class="img-responsive" src="<?php echo $donnees['link'] ?>"></div>
+                        <div class="card-header">
+                            <div class="card-title h5"><?php echo $donnees['name'] ?></div>
+                            <div class="card-subtitle text-gray"><?php echo $donnees['type'] . ' - ' . $donnees['year'] ?></div>
+                        </div>
+                        <div class="card-body"><?php echo $donnees['description'] ?></div>
 
-            <?php } ?>
-            <br>
-        </p>
+                        <?php if ($admin) { ?>
 
-    <?php
-    }
+                            <div class="card-footer">
+                                <form id="<?php echo ($donnees['id']);  ?>" action="projects/edit.php" method="post"> <input type="hidden" name="id" value="<?php echo ($donnees['id']);;  ?>" /> </form>
+                                <a class="btn btn-primary" href='#' onclick='document.getElementById("<?php echo $donnees['id']  ?>").submit()'>Modifier</a>
 
-    $reponse->closeCursor(); // Termine le traitement de la requête
-    ?>
+                            </div>
 
+
+                        <?php } ?>
+
+
+                    </div>
+                </div>
+
+            <?php
+            }
+
+            $reponse->closeCursor(); // Termine le traitement de la requête
+            ?>
+
+
+        </div>
+    </div>
 </body>
 
 </html>
