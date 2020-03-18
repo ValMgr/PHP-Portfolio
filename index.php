@@ -56,9 +56,12 @@ $admin = true
                         <?php if ($admin) { ?>
 
                             <div class="card-footer">
-                                <form id="<?php echo ($donnees['id']);  ?>" action="projects/edit.php" method="post"> <input type="hidden" name="id" value="<?php echo ($donnees['id']);;  ?>" /> </form>
-                                <a class="btn btn-primary" href='#' onclick='document.getElementById("<?php echo $donnees['id']  ?>").submit()'>Modifier</a>
+                                <form id="<?php echo ($donnees['id']);  ?>" action="projects/edit.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo ($donnees['id']);;  ?>" />
+                                </form>
 
+                                <a class="btn btn-primary" href='#' onclick='document.getElementById("<?php echo $donnees['id']  ?>").submit()'>Modifier</a>
+                                <a class="btn btn-error" href='#' >Supprimer</a>
                             </div>
 
 
