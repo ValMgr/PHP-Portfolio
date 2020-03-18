@@ -4,6 +4,16 @@
   padding: 50px;
   margin: 0 auto;
 }
+
+.content form{
+  width: 50%;
+}
+
+.vertical-center{
+  position: relative;
+  top: 20vh;
+}
+
 .projects {
     padding-top: 25px;
 }

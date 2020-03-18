@@ -4,9 +4,7 @@
 
 
         $_SESSION['admin'] = false;
-        unset($_SESSION['login']);
-        unset($_SESSION['pwd']);
-        unset($_SESSION['username']);
+        unset($_SESSION['profil']);
 
 
         header ('location: ../index.php');

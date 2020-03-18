@@ -14,7 +14,7 @@ include('@import/connection_check.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - PHP</title>
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-    <link rel="stylesheet" href="@import/style_index.css">
+    <link rel="stylesheet" href="@import/style.css">
 
 </head>
 
@@ -23,15 +23,15 @@ include('@import/connection_check.php');
     <header class="navbar">
         <section class="navbar-section">
             <a href="index.php" class="navbar-brand mr-2">V² Blog</a>
-            <a href="projects/add.php" class="btn btn-link">add</a>
+            <a href="projects/add.php" class="btn btn-link">add project</a>
         </section>
    
-        <section class="navbar-section">
+        <section class="navbar-section" style="justify-content: center;">
             <?php if(!$admin){ ?>
                 <button class="btn btn-primary" onclick="window.location.href='./connect/login_form.php'">Login</button>
             <?php }
                 else{ ?>
-                    <p>Bonjour <?php echo $_SESSION['username'] ?> </p>
+                    <p class="m-1">Bonjour <a href="profil/?id=<?php echo $_SESSION['profil'][0] ?>"><?php echo $_SESSION['profil'][1] ?><a> </p>
                     <button class="btn btn-primary" onclick="window.location.href='./connect/disconnect.php'">Disconnect</button>
                 <?php } ?>
         </section>

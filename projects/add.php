@@ -9,13 +9,26 @@
     <title>add project</title>
 
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-    <link rel="stylesheet" href="../@import/style_index.css">
+    <link rel="stylesheet" href="../@import/style.css">
 
 </head>
 
 <body>
-    <div class="content">
-        <form action="adding.php" method="post">
+
+    <header class="navbar">
+        <section class="navbar-section">
+            <a href="../index.php" class="navbar-brand mr-2">V² Blog</a>
+        </section>
+
+        <!-- C'est de la triche -->
+        <section class="navbar-section">
+        </section>
+        
+    </header>
+
+
+    <div class="content vertical-center">
+        <form class="form-horizontal p-centered" action="adding.php" method="post">
 
             <div class="form-group">
                 <label class="form-label" for="name">Nom project :</label>
@@ -51,8 +64,8 @@
             <input class="form-input" type="text" name="url" placeholder="https://www.monrul.com/uxyz.png">
                 <br>
 
-            <!-- <input type="submit" value="Valider" /> -->
             <button class="btn btn-primary" type="submit" value="Valider">Valider</button>
+            <button class="btn" onclick="window.location.href='../index.php'">Retour</button>
         </form>
     </div>
 </body>
