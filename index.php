@@ -36,8 +36,8 @@ $admin = true
         <div class="columns projects">
 
             <?php
-            // on récupère les données de la table projects
-            $reponse = $dbPdo->query('SELECT * FROM projects');
+            // on récupère les données de la table projects par ordre décroissant
+            $reponse = $dbPdo->query('SELECT * FROM projects ORDER BY year DESC');
 
             // On affiche chaque entrée une à une
             while ($donnees = $reponse->fetch()) {
