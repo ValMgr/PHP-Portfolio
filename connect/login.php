@@ -5,11 +5,10 @@ include('../@import/db_connect.php');
 
     if (isset($_POST['login']) && isset($_POST['pwd'])) {
 
-    $requete = "SELECT * FROM USER WHERE 1";
-    $query = $dbPdo->prepare($requete);
-    $obj = $dbPdo->query ($requete);
+    $requete = $dbPdo->query("SELECT * FROM USER WHERE 1");
 
-        foreach ($obj as $key => $array) {
+
+        foreach ($requete as $key => $array) {
                 $valid_username = $array[1];
                 $valid_password = $array[2];
 

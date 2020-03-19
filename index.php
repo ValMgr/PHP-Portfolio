@@ -33,7 +33,7 @@ include('@import/connection_check.php');
             <?php if (!$admin) { ?>
                 <button class="btn btn-primary" onclick="window.location.href='./connect/login_form.php'">Login</button>
             <?php } else { ?>
-                <p class="m-1">Bonjour <a href="profil/?id=<?php echo $_SESSION['profil'][0] ?>"><?php echo $_SESSION['profil'][1] ?></a> </p>
+                <p class="m-1">Bonjour <a href="profil?id=<?php echo $_SESSION['profil'][0] ?>"><?php echo $_SESSION['profil'][1] ?></a> </p>
                 <img class="pp" src="<?php echo ($_SESSION['profil'][3]) ?>" />
                 <button class="btn btn-primary" onclick="window.location.href='./connect/disconnect.php'">Disconnect</button>
             <?php } ?>

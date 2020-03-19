@@ -44,10 +44,10 @@
 
             <div class="form-group">
                 <label class="form-label" for="ImgUser">Profil picture</label> 
-                <input class="form-input" type="text" id="ImgUser" name="ImgUser" placeholder="Username">
+                <input class="form-input" type="text" id="ImgUser" name="ImgUser" placeholder="Profil picture">
             </div>
 
-            <input  class="btn" type="submit" value="S'enregistrer">
+            <input  class="btn" type="submit" value="Crée un compte">
             <a class="btn" onclick="window.location.href='../index.php'">Retour</a>
 
 
