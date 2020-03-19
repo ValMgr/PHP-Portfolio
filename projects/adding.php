@@ -2,6 +2,7 @@
 
     include('../@import/db_connect.php');
 
+    $numUser =  $_POST['numUser'];
     $name =  $_POST['name'];
     $description =  $_POST['description'];
     $type =  $_POST['type'];
@@ -9,9 +10,10 @@
     $img_or_video =  $_POST['img_or_video'];
     $url =  $_POST['url'];
 
-    $query = $dbPdo->prepare('INSERT INTO projects (id, name, description, type, year, img_or_video, link) 
-    VALUES(NULL, :name, :description, :type, :year, :img_or_video, :url)');
+    $query = $dbPdo->prepare('INSERT INTO projects (id, NumUser, name, description, type, year, img_or_video, link) 
+    VALUES(NULL, :numUser, :name, :description, :type, :year, :img_or_video, :url)');
     $query->execute(array(
+        'numUser' => $numUser,
         'name' => $name,
         'description' => $description,
         'type' => $type,

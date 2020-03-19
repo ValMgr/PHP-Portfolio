@@ -17,7 +17,7 @@ include('../@import/db_connect.php');
 
 
                 $_SESSION['admin'] = true;
-                $_SESSION['profil'] = array($array[0], $array[1]);
+                $_SESSION['profil'] = array($array[0], $array[1], $array[3], $array[4]);
 
                 echo "Connected...";
                 header ('location: ../index.php');

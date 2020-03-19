@@ -41,6 +41,11 @@
 .navbar button {
     margin-left: 15px;
 }
+.pp{
+  max-width: 36px;
+  border-radius: 50%;
+  border: 1px solid #c8c8c8;
+}
 
 
 /* Index Cards */

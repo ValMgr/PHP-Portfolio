@@ -23,12 +23,13 @@
         <!-- C'est de la triche -->
         <section class="navbar-section">
         </section>
-        
+
     </header>
 
 
-    <div class="content vertical-center">
+    <div class="content">
         <form class="form-horizontal p-centered" action="adding.php" method="post">
+            <input type="hidden" name="numUser" value="<?php echo $_SESSION['profil'][0] ?>">
 
             <div class="form-group">
                 <label class="form-label" for="name">Nom project :</label>
@@ -51,7 +52,7 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label">Illustration</label>
+                <label class="form-label">Illustration :</label><br>
                 <label class="form-radio form-inline">
                     <input type="radio" name="img_or_video" value="0" checked>
                     <i class="form-icon"></i> Image
@@ -62,7 +63,9 @@
                 </label>
             </div>
             <input class="form-input" type="text" name="url" placeholder="https://www.monrul.com/uxyz.png">
-                <br>
+            <small>Pour les vidéos, insérez le code de votre video vimeo :<br>https://vimeo.com/<strong>395755581</strong></small>
+            <br>
+            <br>
 
             <button class="btn btn-primary" type="submit" value="Valider">Valider</button>
             <button class="btn" onclick="window.location.href='../index.php'">Retour</button>
