@@ -62,6 +62,16 @@
   width: 100%;
 }
 
+.user {
+  text-align: center;
+  margin-top: 10px;
+}
+.user img{
+  width: 100px;
+  height: auto;
+  border-radius: 50px;
+}
+
 /* Profil */
 
 .profil{

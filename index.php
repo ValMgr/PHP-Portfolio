@@ -57,13 +57,12 @@ include('@import/connection_check.php');
                     <div class="card">
                         <div class="card-image">
                             <?php
-                        
-                            if ($donnees['img_or_video'] == 0){
+
+                            if ($donnees['img_or_video'] == 0) {
 
                                 echo '<img class="img-responsive" src="' . $donnees['link'] . '">';
-
                             } elseif ($donnees['img_or_video'] == 1) {
-                                echo '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/'. $donnees['link'] .'?loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>';
+                                echo '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/' . $donnees['link'] . '?loop=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>';
                             } else {
                                 echo 'error';
                             } ?>
@@ -98,6 +97,30 @@ include('@import/connection_check.php');
             }
 
             $reponse->closeCursor(); // Termine le traitement de la requête
+            ?>
+
+            <div class="column col-12" style="text-align: center; margin-top: 100px">
+                <h2>Administrateurs</h2>
+            </div>
+
+            <?php
+
+            // on récupère les données de la table projects par ordre décroissant
+            $users = $dbPdo->query('SELECT NumUser, NameUser, DescUser, ImgUser FROM USER WHERE NumUser <= 1');
+
+
+            // On affiche chaque entrée une à une
+            while ($us = $users->fetch()) {
+                echo '
+                <div class="column col-6 col-xs-12 user">' .
+                    '<img src="' . $us['ImgUser'] . '" /><br>' .
+                    '<a href="profil?id='. $us['NumUser'] .'"><strong>' . $us['NameUser'] . '</a></strong><br>' .
+                    $us['DescUser'] . '<br>' .
+
+                    '</div>';
+            }
+
+            $users->closeCursor();
             ?>
 
 
